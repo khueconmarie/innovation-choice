@@ -38,10 +38,21 @@ assert nl['max_envelope_error']<5e-8
 gu=json.loads((P/'checks/general_utility_analysis.json').read_text())
 assert gu['cases']==80 and gu['max_derivative_error']<3e-8
 assert gu['min_resource_cap_slack']>0
+cu=json.loads((P/'checks/characterization_analysis.json').read_text())
+assert cu['cases']==48 and cu['max_derivative_error']<1e-8
+assert cu['all_signs_checked'] and cu['exact_infinite_geometric_groups']
+nu=json.loads((P/'checks/neutrality_analysis.json').read_text())
+assert nu['cases']==24 and nu['max_fee_error']<2e-12
+assert nu['common_future_invariance'] and nu['min_prefix_investment']>0
+fg=json.loads((P/'checks/figure_analysis.json').read_text())
+assert fg['ordering_checked'] and fg['consumption_rows']==48
+for ref in (P/'reference/generated').glob('*.tex'):
+    assert ref.read_bytes()==(P/'generated'/ref.name).read_bytes(),ref.name
 report=dict(passed=True,csv_rows=csv_rows,npz_arrays=len(a.files),
             max_csv_absolute_difference=max_difference,
             nonlinear_fee_brackets=24,nonlinear_effect_signs=12,
-            general_utility_cases=80,
+            general_utility_cases=80,characterization_cases=48,neutrality_cases=24,
+            compensated_figure_points=48,
             scope='Output/reference consistency and numerical bound checks; not a new model solution.')
 (P/'checks/output_verification.json').write_text(json.dumps(report,indent=2)+'\n')
 print(json.dumps(report,indent=2))

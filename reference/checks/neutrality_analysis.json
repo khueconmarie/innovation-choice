@@ -1,0 +1,9 @@
+{
+  "cases": 24,
+  "max_fee_error": 4.135580766728708e-15,
+  "max_value_error": 3.552713678800501e-14,
+  "min_prefix_investment": 0.03593499986927483,
+  "common_future_invariance": true,
+  "exact_tail": true,
+  "scope": "Independent simulation and exact infinite continuation under the maintained interior domain."
+}

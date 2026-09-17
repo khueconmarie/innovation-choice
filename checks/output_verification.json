@@ -1,10 +1,13 @@
 {
   "passed": true,
-  "csv_rows": 38,
+  "csv_rows": 638,
   "npz_arrays": 72,
   "max_csv_absolute_difference": 0.0,
   "nonlinear_fee_brackets": 24,
   "nonlinear_effect_signs": 12,
   "general_utility_cases": 80,
+  "characterization_cases": 48,
+  "neutrality_cases": 24,
+  "compensated_figure_points": 48,
   "scope": "Output/reference consistency and numerical bound checks; not a new model solution."
 }

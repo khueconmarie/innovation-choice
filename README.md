@@ -1,6 +1,6 @@
-# Substitution and Complementarity in Innovation Choice
+# Temporary Innovations and Future Investment Opportunities
 
-Reproduction materials for manuscript **v0.41**, prepared for *Economic Theory*.
+Reproduction materials for manuscript **v0.42**, prepared for *Economic Theory*.
 This identifies the submission target, not an acceptance or publication status.
 
 **Author:** Hyunkyu Lee, Department of Economics, Kyung Hee University, Seoul,
@@ -9,7 +9,10 @@ Republic of Korea. **Contact:** richardhk2@khu.ac.kr.
 A better replacement technology can raise the reservation payment for the
 innovation it makes obsolete. These materials reproduce the exact examples,
 resource bounds, arrival comparisons, and one-state concave-economy results,
-and check the finite-horizon analogue of the general-utility theorem.
+and the compensated ordering and universal-curvature results. The central
+comparison lets both access and no-access economies exploit the same later
+technology. Theorem proofs are in the manuscript; the computations check
+consequences and provide the concave-economy examples.
 
 ## Download and run
 
@@ -22,7 +25,7 @@ the repository:
 git clone https://github.com/khueconmarie/innovation-choice.git
 cd innovation-choice
 ```
- Python 3.12 is the tested runtime. No GPU, credentials, network
+Python 3.12 is the tested runtime. No GPU, credentials, network
 API, proprietary dataset, or paid service is required after dependencies are installed.
 
 ```sh
@@ -52,12 +55,19 @@ It is a consistency check, not a fresh solution of the model.
 | Manuscript result | Program | Data / checks |
 |---|---|---|
 | Theorem 1, general utility | `general_utility_analysis.py` | `checks/general_utility_analysis.json` (80 finite-horizon comparisons) |
+| Theorem 2; constructive necessity | `characterization_analysis.py` | `generated/characterization_witnesses.csv` (48 exact geometric-stream comparisons) |
+| Proposition 3; logarithmic neutrality boundaries | `neutrality_analysis.py` | `generated/neutrality_boundaries.csv` (24 policy/value comparisons) |
 | Corollary 1; Table 1; Fig. 1 | `dynamic_analysis.py` and `render_figure.py` | `generated/dynamic_examples.csv`, `checks/dynamic_analysis.json`, `figures/Fig1.pdf` |
-| Table 2; resource ceiling | `scale_analysis.py` | `generated/scale_examples.csv`, `checks/scale_analysis.json` |
+| Proposition 2; Table 2; resource ceiling | `scale_analysis.py` | `generated/scale_examples.csv`, `checks/scale_analysis.json` |
 | Table 3; curvature × survival grid | `nonlinear_analysis.py` | `generated/nonlinear_examples.csv`, `generated/nonlinear_paths.npz`, `checks/nonlinear_analysis.json` |
 | Appendix Table 4; joint arrival and quality | `joint_analysis.py` | `generated/joint_examples.csv`, `checks/joint_analysis.json` |
 
-`generated/*_table.tex` are the exact table fragments included in the paper.
+Table 2 uses `generated/scale_table_main.tex` (T=5,10). The full
+`scale_examples.csv` and `scale_table.tex` additionally retain T=20,40
+as different, longer-lived innovations. Other table fragments are included
+without subsetting. Figure 1 data are in `reservation_curves.csv` and
+`compensated_consumption_paths.csv`. Its right panel uses each preference's
+own reservation fee at common return 1.06, not the fixed adoption fee.
 The scripts run sequentially; `scale_analysis.py` and `joint_analysis.py`
 import formulas from `dynamic_analysis.py`.
 
@@ -81,7 +91,12 @@ across cells. Numerical value intervals use a feasible continuation, an affine
 upper bound, a global gradient correction, and an explicit rounding allowance;
 they are not formal directed-rounding interval certificates. The infinite-horizon
 general-utility theorem is proved analytically; its 80 numerical checks are
-finite-horizon tests of consumption ordering and the fee derivative.
+finite-horizon tests of consumption, capital and investment ordering and
+the fee derivative. `characterization_witnesses.csv` checks the necessity
+construction with an exact three-group reduction of the infinite stream.
+`neutrality_boundaries.csv` compares the two logarithmic formulas with direct
+policy simulation plus exact infinite continuation. Bounded quality paths
+and interior investments are enforced in these examples.
 
 ## Reproduction evidence
 
@@ -97,3 +112,15 @@ or unrelated research materials are included.
 
 The journal figure uses distinct line styles as well as color. `render_figure.py`
 regenerates `Fig1.pdf` from the same closed-form data with embedded TrueType fonts.
+
+## Revision v0.42
+
+The public package replaces the former initial-investment figure with the
+compensated-consumption figure. The two old `dynamic_complementarity` images
+are retired to avoid presenting them as current results. The previous release
+remains in Git history. New curvature and neutrality programs require no
+additional dependencies. All unchanged numerical table inputs are preserved.
+
+The full v0.42 run was tested with Python 3.12.14 on macOS ARM64, using
+the pinned versions in `requirements.txt`. The recorded run took about nine
+seconds on the author's environment; execution time depends on hardware.

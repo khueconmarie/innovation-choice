@@ -6,7 +6,8 @@ from importlib.metadata import version
 P = Path(__file__).resolve().parent
 for d in ['checks','generated','figures','logs']:
     (P/d).mkdir(exist_ok=True)
-scripts = ['general_utility_analysis.py','dynamic_analysis.py','scale_analysis.py',
+scripts = ['general_utility_analysis.py','characterization_analysis.py','neutrality_analysis.py',
+           'dynamic_analysis.py','scale_analysis.py',
            'joint_analysis.py','nonlinear_analysis.py','render_figure.py','verify_outputs.py']
 record = dict(python=sys.version, platform=platform.platform(),
               packages={p:version(p) for p in ['numpy','scipy','sympy','matplotlib']},

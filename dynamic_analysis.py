@@ -146,27 +146,8 @@ def main():
     with (P/'generated/dynamic_examples.csv').open('w',newline='') as f:
         writer=csv.DictWriter(f,fieldnames=rows[0].keys());writer.writeheader();writer.writerows(rows)
 
-    plt.rcParams.update({'font.family':'serif','font.size':10,'axes.spines.top':False,
-                         'axes.spines.right':False})
-    fig,axs=plt.subplots(1,2,figsize=(10,3.8))
-    xx=np.linspace(LOW,HIGH,160)
-    colors=['#246483','#666666','#ab4c36']
-    for gamma,color in zip([.5,1.,2.],colors):
-        axs[0].plot(xx,[100*wtp(gamma,x) for x in xx],color=color,
-                    label=f'EIS = {1/gamma:g}',lw=1.9)
-        axs[1].plot(xx,[1-1/H_closed(gamma,BASE*GAIN,x) for x in xx],color=color,lw=1.9)
-    axs[0].axhline(100*FEE,color='black',lw=.9,ls='--',label='Project fee')
-    axs[0].set(xlabel='Common gross return after obsolescence',ylabel='Maximum initial fee (% of resources)')
-    axs[1].set(xlabel='Common gross return after obsolescence',ylabel='Initial investment / post-fee resources')
-    for ax in axs:
-        ax.set_xticks([1.041,1.047,1.053,1.060])
-        ax.set_xticklabels(['1.041','1.047','1.053','1.060'])
-    fig.legend(*axs[0].get_legend_handles_labels(),loc='upper center',ncol=4,frameon=False,
-               bbox_to_anchor=(.5,1.02),fontsize=9)
-    fig.tight_layout(rect=[0,0,1,.91])
-    fig.savefig(P/'figures/dynamic_complementarity.pdf',bbox_inches='tight')
-    fig.savefig(P/'figures/dynamic_complementarity.png',bbox_inches='tight',dpi=220)
-    plt.close(fig)
+    # The publication figure is generated separately by render_figure.py.
+    
 
     report={'model':'Deterministic linear accumulation, CRRA, endogenous optimal consumption/investment',
             'inputs':{'beta':BETA,'base_return':BASE,'innovation_multiplier':GAIN,'obsolescence_date':T,

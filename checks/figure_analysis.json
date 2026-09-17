@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "curve_rows": 480,
+  "consumption_rows": 48,
+  "right_panel_common_return": 1.06,
+  "right_panel_fee": "Own reservation fee in each preference specification",
+  "ordering_checked": true
+}

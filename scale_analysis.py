@@ -36,6 +36,7 @@ def main():
                      f"{100*r['remaining_room']:.4f} "+r'\\')
     lines += [r'\bottomrule', r'\end{tabular}', '']
     (P/'generated/scale_table.tex').write_text('\n'.join(lines))
+    (P/'generated/scale_table_main.tex').write_text('\n'.join(lines[:6]+lines[-3:]))
 
     rng=np.random.default_rng(390916)
     errors=[]; slacks=[]; distances=[]

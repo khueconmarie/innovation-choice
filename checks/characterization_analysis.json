@@ -1,0 +1,8 @@
+{
+  "cases": 48,
+  "max_derivative_error": 2.842170943040401e-10,
+  "max_compensation_error": 4.263256414560601e-14,
+  "all_signs_checked": true,
+  "exact_infinite_geometric_groups": true,
+  "scope": "Numerical checks of constructive necessity; the proof establishes universal quantifiers."
+}

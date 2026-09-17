@@ -11,39 +11,49 @@
     {
       "script": "general_utility_analysis.py",
       "exit_code": 0,
-      "seconds": 4.866322709014639
+      "seconds": 5.046945666894317
+    },
+    {
+      "script": "characterization_analysis.py",
+      "exit_code": 0,
+      "seconds": 0.5946697499603033
+    },
+    {
+      "script": "neutrality_analysis.py",
+      "exit_code": 0,
+      "seconds": 0.2161802500486374
     },
     {
       "script": "dynamic_analysis.py",
       "exit_code": 0,
-      "seconds": 0.6833828748203814
+      "seconds": 0.4566026250831783
     },
     {
       "script": "scale_analysis.py",
       "exit_code": 0,
-      "seconds": 0.29450708301737905
+      "seconds": 0.3735653751064092
     },
     {
       "script": "joint_analysis.py",
       "exit_code": 0,
-      "seconds": 0.4749039998278022
+      "seconds": 0.5899550828617066
     },
     {
       "script": "nonlinear_analysis.py",
       "exit_code": 0,
-      "seconds": 0.5989403340499848
+      "seconds": 0.6660463330335915
     },
     {
       "script": "render_figure.py",
       "exit_code": 0,
-      "seconds": 0.43445137492381036
+      "seconds": 0.5356185000855476
     },
     {
       "script": "verify_outputs.py",
       "exit_code": 0,
-      "seconds": 0.04746670904569328
+      "seconds": 0.06621012487448752
     }
   ],
-  "total_seconds": 7.39997508469969,
+  "total_seconds": 8.545793707948178,
   "passed": true
 }
