@@ -137,6 +137,6 @@ positive ticks above zero in the compensated-consumption panel.
 
 The full v0.43 run uses Python 3.12.14 on macOS ARM64 and the pinned versions in
 `requirements.txt`. It takes approximately ten seconds in the author's
-environment; execution time depends on hardware. The manuscript and Online
-Resource 1 identify an immutable Git commit, so later repository updates need
+environment; execution time depends on hardware. The manuscript and submission
+guide identify an immutable Git commit, so later repository updates need
 not change the downloadable submission version.
