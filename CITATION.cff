@@ -2,10 +2,11 @@ cff-version: 1.2.0
 message: "Please cite the accompanying paper when using these reproduction materials."
 title: "Temporary Innovations and Future Investment Opportunities: Reproduction Materials"
 type: software
-version: "0.42"
+version: "0.43"
 date-released: "2026-09-17"
 authors:
   - family-names: Lee
     given-names: Hyunkyu
+    orcid: "https://orcid.org/0000-0001-9134-1748"
     affiliation: Kyung Hee University
 repository-code: "https://github.com/khueconmarie/innovation-choice"

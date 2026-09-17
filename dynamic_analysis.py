@@ -53,8 +53,13 @@ def physical_value(gamma,common,project=False,fee=0.,N=6000):
     tail=np.cumsum(terms[::-1])[::-1]
     k=np.exp(logs)*(1-fee)/H*tail
     inv=k-c
+    # The PV formula gives post-fee resources at date zero, not installed K0.
+    k[0]=1.
+    initial_budget_error=abs(c[0]+inv[0]+fee-k[0])
+    assert initial_budget_error<1e-12
     physical_error=float(np.max(np.abs(k[1:201]-rr[:200]*inv[:200])/
                                   np.maximum(k[1:201],1e-200)))
+    physical_error=max(physical_error,initial_budget_error)
     assert np.all(inv[:201]>0)
     euler=float(np.max(np.abs((c[1:201]/c[:200])**gamma-BETA*rr[:200])))
     if abs(gamma-1)<1e-10:
@@ -153,6 +158,7 @@ def main():
             'inputs':{'beta':BETA,'base_return':BASE,'innovation_multiplier':GAIN,'obsolescence_date':T,
                       'low_common_return':LOW,'high_common_return':HIGH,'project_fee_share':FEE},
             'examples':rows,'symbolic_WTP_derivative':'pass','physical_checks':errors,
+            'common_physical_initial_capital_checked':True,
             'random_path_sign_checks':sign_checks,'central_difference_step':2e-5,
             'derivative_max_error':derivative_error,'investment_exposure_max_error':exposure_error,
             'interpretation':'Theorem has a global optimum; physical checks verify its recurrences, not an independent optimizer.'}

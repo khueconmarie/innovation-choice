@@ -5,55 +5,61 @@
     "numpy": "2.3.5",
     "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "matplotlib": "3.11.1"
+    "matplotlib": "3.11.1",
+    "mpmath": "1.3.0"
   },
   "scripts": [
     {
       "script": "general_utility_analysis.py",
       "exit_code": 0,
-      "seconds": 5.046945666894317
+      "seconds": 4.962904833024368
     },
     {
       "script": "characterization_analysis.py",
       "exit_code": 0,
-      "seconds": 0.5946697499603033
+      "seconds": 0.5635791248641908
     },
     {
       "script": "neutrality_analysis.py",
       "exit_code": 0,
-      "seconds": 0.2161802500486374
+      "seconds": 0.19586174981668591
+    },
+    {
+      "script": "resource_example.py",
+      "exit_code": 0,
+      "seconds": 0.24244729103520513
     },
     {
       "script": "dynamic_analysis.py",
       "exit_code": 0,
-      "seconds": 0.4566026250831783
+      "seconds": 0.3813272500410676
     },
     {
       "script": "scale_analysis.py",
       "exit_code": 0,
-      "seconds": 0.3735653751064092
+      "seconds": 0.311255875043571
     },
     {
       "script": "joint_analysis.py",
       "exit_code": 0,
-      "seconds": 0.5899550828617066
+      "seconds": 0.5438603339716792
     },
     {
       "script": "nonlinear_analysis.py",
       "exit_code": 0,
-      "seconds": 0.6660463330335915
+      "seconds": 0.70111129200086
     },
     {
       "script": "render_figure.py",
       "exit_code": 0,
-      "seconds": 0.5356185000855476
+      "seconds": 0.465151583077386
     },
     {
       "script": "verify_outputs.py",
       "exit_code": 0,
-      "seconds": 0.06621012487448752
+      "seconds": 0.06200054218061268
     }
   ],
-  "total_seconds": 8.545793707948178,
+  "total_seconds": 8.429499875055626,
   "passed": true
 }

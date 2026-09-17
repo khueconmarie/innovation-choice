@@ -82,6 +82,24 @@ def main():
         min_prefix_investment=min(r['min_prefix_investment'] for r in rows),
         common_future_invariance=True,exact_tail=True,
         scope='Independent simulation and exact infinite continuation under the maintained interior domain.')
+    # Directly verify the initial-fee condition separately from no-fee dates.
+    margins=[]
+    for beta in [.90,.96]:
+        for sigma in [.0,.2,.9]:
+            q=1.03;K=1.3
+            limit=1-(1-beta)*sigma/(beta*q)
+            for fraction in [.25,.75]:
+                fee=K*limit*fraction
+                W=(1+sigma/q)*K-fee
+                direct=K-fee-(1-beta)*W
+                formula=(beta-(1-beta)*sigma/q)*K-beta*fee
+                assert abs(direct-formula)<1e-14 and direct>0
+                assert fee/K<limit
+                margins.append(limit-fee/K)
+            boundary=K*limit
+            assert abs(K-boundary-(1-beta)*((1+sigma/q)*K-boundary))<1e-14
+    report['initial_fee_interiority_checks']=len(margins)
+    report['min_initial_fee_fraction_slack']=min(margins)
     (P/'checks/neutrality_analysis.json').write_text(json.dumps(report,indent=2)+'\n')
     print(json.dumps(report,indent=2))
 if __name__=='__main__':main()

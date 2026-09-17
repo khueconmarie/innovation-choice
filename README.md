@@ -1,10 +1,11 @@
 # Temporary Innovations and Future Investment Opportunities
 
-Reproduction materials for manuscript **v0.42**, prepared for *Economic Theory*.
+Reproduction materials for manuscript **v0.43**, prepared for *Economic Theory*.
 This identifies the submission target, not an acceptance or publication status.
 
 **Author:** Hyunkyu Lee, Department of Economics, Kyung Hee University, Seoul,
 Republic of Korea. **Contact:** richardhk2@khu.ac.kr.
+**ORCID:** https://orcid.org/0000-0001-9134-1748.
 
 A better replacement technology can raise the reservation payment for the
 innovation it makes obsolete. These materials reproduce the exact examples,
@@ -57,6 +58,7 @@ It is a consistency check, not a fresh solution of the model.
 | Theorem 1, general utility | `general_utility_analysis.py` | `checks/general_utility_analysis.json` (80 finite-horizon comparisons) |
 | Theorem 2; constructive necessity | `characterization_analysis.py` | `generated/characterization_witnesses.csv` (48 exact geometric-stream comparisons) |
 | Proposition 3; logarithmic neutrality boundaries | `neutrality_analysis.py` | `generated/neutrality_boundaries.csv` (24 policy/value comparisons) |
+| Section 3.2; one preference, two resource levels | `resource_example.py` | `generated/resource_level_example.csv`, `checks/resource_example_analysis.json` (70-decimal check) |
 | Corollary 1; Table 1; Fig. 1 | `dynamic_analysis.py` and `render_figure.py` | `generated/dynamic_examples.csv`, `checks/dynamic_analysis.json`, `figures/Fig1.pdf` |
 | Proposition 2; Table 2; resource ceiling | `scale_analysis.py` | `generated/scale_examples.csv`, `checks/scale_analysis.json` |
 | Table 3; curvature × survival grid | `nonlinear_analysis.py` | `generated/nonlinear_examples.csv`, `generated/nonlinear_paths.npz`, `checks/nonlinear_analysis.json` |
@@ -68,8 +70,12 @@ as different, longer-lived innovations. Other table fragments are included
 without subsetting. Figure 1 data are in `reservation_curves.csv` and
 `compensated_consumption_paths.csv`. Its right panel uses each preference's
 own reservation fee at common return 1.06, not the fixed adoption fee.
+For the resource-level example, the derivative column reports the local response
+of F-star/X to log R1, holding X and the preference fixed.
 The scripts run sequentially; `scale_analysis.py` and `joint_analysis.py`
 import formulas from `dynamic_analysis.py`.
+The resource-level script imports the independent floating-point implementation
+from `characterization_analysis.py`.
 
 ## Data dictionary and scope
 
@@ -113,14 +119,24 @@ or unrelated research materials are included.
 The journal figure uses distinct line styles as well as color. `render_figure.py`
 regenerates `Fig1.pdf` from the same closed-form data with embedded TrueType fonts.
 
-## Revision v0.42
+## Revision v0.43
 
-The public package replaces the former initial-investment figure with the
-compensated-consumption figure. The two old `dynamic_complementarity` images
-are retired to avoid presenting them as current results. The previous release
-remains in Git history. New curvature and neutrality programs require no
-additional dependencies. All unchanged numerical table inputs are preserved.
+Physical initial capital is now explicitly held fixed across access and outside
+allocations; the fee is charged to the date-zero resource budget. The programs
+check that budget separately from all later accumulation equations. No published
+table entry or nonlinear path changes as a result of the clarification.
+The logarithmic program additionally checks the initial-fee interiority bound.
 
-The full v0.42 run was tested with Python 3.12.14 on macOS ARM64, using
-the pinned versions in `requirements.txt`. The recorded run took about nine
-seconds on the author's environment; execution time depends on hardware.
+`resource_example.py` adds two exact infinite-stream comparisons using the same
+utility and technology but different initial resources. It solves the budget
+and compensation equations at 70-decimal precision, compares the analytic fee
+derivative with a central finite difference, and cross-checks the earlier
+floating-point solver. These are local theoretical examples, not an empirical
+wealth threshold or a global wealth monotonicity result. The figure now displays
+positive ticks above zero in the compensated-consumption panel.
+
+The full v0.43 run uses Python 3.12.14 on macOS ARM64 and the pinned versions in
+`requirements.txt`. It takes approximately ten seconds in the author's
+environment; execution time depends on hardware. The manuscript and Online
+Resource 1 identify an immutable Git commit, so later repository updates need
+not change the downloadable submission version.

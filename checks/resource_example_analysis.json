@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "cases": 2,
+  "precision_decimal_digits": 70,
+  "same_preferences": true,
+  "same_return_paths": true,
+  "only_resources_differ": true,
+  "exact_infinite_groups": true,
+  "max_derivative_error": 2.19743173463061e-29,
+  "max_double_solver_fee_error": 9.64783808399261e-14,
+  "scope": "Two local theoretical examples; no empirical wealth threshold or global monotone sign-switch claim."
+}

@@ -34,6 +34,10 @@ axs[0].set(xlabel='Common gross return after date 5',ylabel='Reservation payment
 axs[0].set_xticks([1.041,1.047,1.053,1.060]);axs[0].set_xticklabels(['1.041','1.047','1.053','1.060'])
 axs[1].axhline(0,color='black',lw=.8);axs[1].axvline(T,color='#888888',ls=':',lw=1.)
 axs[1].set(xlabel='Date',ylabel='Compensated log consumption ratio',xticks=[0,5,10,15])
+axs[1].set_ylim(-.195,.027)
+axs[1].set_yticks([-.18,-.12,-.06,0.,.01,.02])
+axs[1].set_yticklabels(['-0.18','-0.12','-0.06','0','+0.01','+0.02'])
+axs[1].fill_between(dates,0,.027,where=dates>=T,color='#edf4f6',alpha=.6,zorder=-3)
 for i,ax in enumerate(axs):ax.text(.02,.98,f'({chr(97+i)})',transform=ax.transAxes,va='top')
 fig.legend(*axs[0].get_legend_handles_labels(),loc='upper center',ncol=4,
            frameon=False,bbox_to_anchor=(.5,1.02),fontsize=9)

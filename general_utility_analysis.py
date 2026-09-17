@@ -90,10 +90,15 @@ def main():
             assert np.all(a['c'][T:] > b['c'][T:])
             assert np.all(np.sign(a['c']-b['c']) == np.sign(ell-ratio))
             capital=[];investment=[]
-            for allocation in [b,a]:
+            for allocation,paid_fee,returns in [(b,0.,r0),(a,fee,ri)]:
                 pv=allocation['c']*np.exp(-allocation['log_g'])
                 kpath=np.exp(allocation['log_g'])*np.cumsum(pv[::-1])[::-1]
-                capital.append(kpath);investment.append(kpath-allocation['c'])
+                jpath=kpath-allocation['c']
+                kpath[0]=x
+                assert abs(allocation['c'][0]+jpath[0]+paid_fee-x)<2e-12
+                assert np.max(np.abs(kpath[1:]-returns*jpath[:-1]))<2e-12
+                capital.append(kpath);investment.append(jpath)
+            assert capital[0][0]==capital[1][0]==x
             assert np.all(capital[1][T:]>capital[0][T:])
             # The last finite-horizon investment is zero in both economies.
             assert np.all(investment[1][T:-1]>investment[0][T:-1])
@@ -134,6 +139,7 @@ def main():
                 compensation_error=abs(a['value']-b['value'])))
     summary = dict(seed=410917, cases=len(records),
         capital_and_investment_ordering_checked=True,
+        common_physical_initial_capital_checked=True,
         scope='Independent finite-horizon dual allocations, not an infinite-horizon numerical proof.',
         max_derivative_error=max(r['derivative_error'] for r in records),
         max_integral_error=max(r['integral_error'] for r in records),

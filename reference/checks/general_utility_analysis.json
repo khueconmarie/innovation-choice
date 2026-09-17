@@ -2,6 +2,7 @@
   "seed": 410917,
   "cases": 80,
   "capital_and_investment_ordering_checked": true,
+  "common_physical_initial_capital_checked": true,
   "scope": "Independent finite-horizon dual allocations, not an infinite-horizon numerical proof.",
   "max_derivative_error": 5.35744712482078e-11,
   "max_integral_error": 3.2959746043559335e-17,

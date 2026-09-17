@@ -44,6 +44,15 @@ assert cu['all_signs_checked'] and cu['exact_infinite_geometric_groups']
 nu=json.loads((P/'checks/neutrality_analysis.json').read_text())
 assert nu['cases']==24 and nu['max_fee_error']<2e-12
 assert nu['common_future_invariance'] and nu['min_prefix_investment']>0
+assert nu['initial_fee_interiority_checks']==12
+assert gu['common_physical_initial_capital_checked']
+dy=json.loads((P/'checks/dynamic_analysis.json').read_text())
+assert dy['common_physical_initial_capital_checked']
+rx=json.loads((P/'checks/resource_example_analysis.json').read_text())
+assert rx['cases']==2 and rx['passed'] and rx['precision_decimal_digits']==70
+assert rx['max_derivative_error']<1e-20
+assert rx['max_double_solver_fee_error']<1e-10
+assert rx['same_preferences'] and rx['same_return_paths'] and rx['only_resources_differ']
 fg=json.loads((P/'checks/figure_analysis.json').read_text())
 assert fg['ordering_checked'] and fg['consumption_rows']==48
 for ref in (P/'reference/generated').glob('*.tex'):
@@ -52,7 +61,8 @@ report=dict(passed=True,csv_rows=csv_rows,npz_arrays=len(a.files),
             max_csv_absolute_difference=max_difference,
             nonlinear_fee_brackets=24,nonlinear_effect_signs=12,
             general_utility_cases=80,characterization_cases=48,neutrality_cases=24,
-            compensated_figure_points=48,
+            compensated_figure_points=48,resource_level_examples=2,initial_fee_interiority_checks=12,
+            common_physical_initial_capital_checked=True,
             scope='Output/reference consistency and numerical bound checks; not a new model solution.')
 (P/'checks/output_verification.json').write_text(json.dumps(report,indent=2)+'\n')
 print(json.dumps(report,indent=2))

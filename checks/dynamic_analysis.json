@@ -89,7 +89,7 @@
       "gamma": 0.5,
       "common": 1.041,
       "indifference": 5.329070518200751e-15,
-      "physical": 7.853240880392375e-16,
+      "physical": 2.220446049250313e-15,
       "euler": 1.1102230246251565e-15,
       "budget": 2.1094237467877974e-15
     },
@@ -97,7 +97,7 @@
       "gamma": 0.5,
       "common": 1.06,
       "indifference": 1.7763568394002505e-15,
-      "physical": 6.786010934747325e-16,
+      "physical": 1.5543122344752192e-15,
       "euler": 1.5543122344752192e-15,
       "budget": 1.7763568394002505e-15
     },
@@ -134,6 +134,7 @@
       "budget": 6.661338147750939e-16
     }
   ],
+  "common_physical_initial_capital_checked": true,
   "random_path_sign_checks": 240,
   "central_difference_step": 2e-05,
   "derivative_max_error": 1.4171271794927165e-10,

@@ -5,5 +5,7 @@
   "min_prefix_investment": 0.03593499986927483,
   "common_future_invariance": true,
   "exact_tail": true,
-  "scope": "Independent simulation and exact infinite continuation under the maintained interior domain."
+  "scope": "Independent simulation and exact infinite continuation under the maintained interior domain.",
+  "initial_fee_interiority_checks": 12,
+  "min_initial_fee_fraction_slack": 0.22572815533980584
 }
