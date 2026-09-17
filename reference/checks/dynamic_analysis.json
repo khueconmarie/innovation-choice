@@ -1,0 +1,142 @@
+{
+  "model": "Deterministic linear accumulation, CRRA, endogenous optimal consumption/investment",
+  "inputs": {
+    "beta": 0.96,
+    "base_return": 1.02,
+    "innovation_multiplier": 1.02,
+    "obsolescence_date": 5,
+    "low_common_return": 1.041,
+    "high_common_return": 1.06,
+    "project_fee_share": 0.0839
+  },
+  "examples": [
+    {
+      "gamma": 0.5,
+      "EIS": 2.0,
+      "common_return": 1.041,
+      "willingness_to_pay_share": 0.0835036895051362,
+      "fee_share": 0.0839,
+      "net_value": -0.002051745609199074,
+      "fund": false,
+      "optimal_initial_investment_share": 0.9592819178798231,
+      "limiting_consumption_growth": -0.0012804097748467657,
+      "innovation_growth_attribution": 0.0
+    },
+    {
+      "gamma": 0.5,
+      "EIS": 2.0,
+      "common_return": 1.06,
+      "willingness_to_pay_share": 0.08760649047948943,
+      "fee_share": 0.0839,
+      "net_value": 0.02441910476106912,
+      "fund": true,
+      "optimal_initial_investment_share": 0.9747998387081965,
+      "limiting_consumption_growth": 0.03489382720744141,
+      "innovation_growth_attribution": 0.0
+    },
+    {
+      "gamma": 1.0,
+      "EIS": 1.0,
+      "common_return": 1.041,
+      "willingness_to_pay_share": 0.08400698125550987,
+      "fee_share": 0.0839,
+      "net_value": 0.0029196458513922607,
+      "fund": true,
+      "optimal_initial_investment_share": 0.96,
+      "limiting_consumption_growth": -0.0006402048874233828,
+      "innovation_growth_attribution": 0.0
+    },
+    {
+      "gamma": 1.0,
+      "EIS": 1.0,
+      "common_return": 1.06,
+      "willingness_to_pay_share": 0.08400698125550987,
+      "fee_share": 0.0839,
+      "net_value": 0.0029196458513922607,
+      "fund": true,
+      "optimal_initial_investment_share": 0.96,
+      "limiting_consumption_growth": 0.017446913603720703,
+      "innovation_growth_attribution": 0.0
+    },
+    {
+      "gamma": 2.0,
+      "EIS": 0.5,
+      "common_return": 1.041,
+      "willingness_to_pay_share": 0.08425012907232457,
+      "fee_share": 0.0839,
+      "net_value": 0.26558207285074786,
+      "fund": true,
+      "optimal_initial_investment_share": 0.9603580660295444,
+      "limiting_consumption_growth": -0.0003201024437116914,
+      "innovation_growth_attribution": 0.0
+    },
+    {
+      "gamma": 2.0,
+      "EIS": 0.5,
+      "common_return": 1.06,
+      "willingness_to_pay_share": 0.08251939144215095,
+      "fee_share": 0.0839,
+      "net_value": -0.7621589922932799,
+      "fund": false,
+      "optimal_initial_investment_share": 0.9535759951440518,
+      "limiting_consumption_growth": 0.008723456801860352,
+      "innovation_growth_attribution": 0.0
+    }
+  ],
+  "symbolic_WTP_derivative": "pass",
+  "physical_checks": [
+    {
+      "gamma": 0.5,
+      "common": 1.041,
+      "indifference": 5.329070518200751e-15,
+      "physical": 7.853240880392375e-16,
+      "euler": 1.1102230246251565e-15,
+      "budget": 2.1094237467877974e-15
+    },
+    {
+      "gamma": 0.5,
+      "common": 1.06,
+      "indifference": 1.7763568394002505e-15,
+      "physical": 6.786010934747325e-16,
+      "euler": 1.5543122344752192e-15,
+      "budget": 1.7763568394002505e-15
+    },
+    {
+      "gamma": 1.0,
+      "common": 1.041,
+      "indifference": 1.4210854715202004e-14,
+      "physical": 9.66996287177537e-16,
+      "euler": 1.1102230246251565e-15,
+      "budget": 1.1102230246251565e-16
+    },
+    {
+      "gamma": 1.0,
+      "common": 1.06,
+      "indifference": 1.4210854715202004e-14,
+      "physical": 8.471182081670788e-16,
+      "euler": 1.5543122344752192e-15,
+      "budget": 1.1102230246251565e-16
+    },
+    {
+      "gamma": 2.0,
+      "common": 1.041,
+      "indifference": 3.410605131648481e-13,
+      "physical": 9.068811698840424e-16,
+      "euler": 1.2212453270876722e-15,
+      "budget": 5.551115123125783e-16
+    },
+    {
+      "gamma": 2.0,
+      "common": 1.06,
+      "indifference": 2.8421709430404007e-13,
+      "physical": 6.450372135079518e-16,
+      "euler": 1.5543122344752192e-15,
+      "budget": 6.661338147750939e-16
+    }
+  ],
+  "random_path_sign_checks": 240,
+  "central_difference_step": 2e-05,
+  "derivative_max_error": 1.4171271794927165e-10,
+  "investment_exposure_max_error": 3.637978807091713e-12,
+  "interpretation": "Theorem has a global optimum; physical checks verify its recurrences, not an independent optimizer."
+}

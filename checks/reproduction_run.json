@@ -1,0 +1,49 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "packages": {
+    "numpy": "2.3.5",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0",
+    "matplotlib": "3.11.1"
+  },
+  "scripts": [
+    {
+      "script": "general_utility_analysis.py",
+      "exit_code": 0,
+      "seconds": 4.866322709014639
+    },
+    {
+      "script": "dynamic_analysis.py",
+      "exit_code": 0,
+      "seconds": 0.6833828748203814
+    },
+    {
+      "script": "scale_analysis.py",
+      "exit_code": 0,
+      "seconds": 0.29450708301737905
+    },
+    {
+      "script": "joint_analysis.py",
+      "exit_code": 0,
+      "seconds": 0.4749039998278022
+    },
+    {
+      "script": "nonlinear_analysis.py",
+      "exit_code": 0,
+      "seconds": 0.5989403340499848
+    },
+    {
+      "script": "render_figure.py",
+      "exit_code": 0,
+      "seconds": 0.43445137492381036
+    },
+    {
+      "script": "verify_outputs.py",
+      "exit_code": 0,
+      "seconds": 0.04746670904569328
+    }
+  ],
+  "total_seconds": 7.39997508469969,
+  "passed": true
+}

@@ -1,0 +1,73 @@
+{
+  "fee_overlap": [
+    0.0835036895051362,
+    0.08425012907232457
+  ],
+  "fee_overlap_width_pp": 0.07464395671883672,
+  "beta_ceiling_gamma_half_R106": 0.9712858623572641,
+  "R_ceiling_beta096_gamma_half": 1.0850694444444444,
+  "invalid_beta098_rejected": true,
+  "symbolic_H_arrival_difference": "pass",
+  "max_H_difference_error": 7.549516567451064e-15,
+  "comparisons": [
+    {
+      "T_old": 5,
+      "T_new": 4,
+      "R_old": 1.041,
+      "R_new": 1.06,
+      "p_old": 0.0835036895051362,
+      "p_arrival_only": 0.06878908453052812,
+      "p_new": 0.07166868596069642,
+      "quality_component": 0.003097110338507583,
+      "arrival_component": -0.015927757222310865,
+      "total_log_burden_change": -0.012830646883803282
+    },
+    {
+      "T_old": 10,
+      "T_new": 9,
+      "R_old": 1.041,
+      "R_new": 1.06,
+      "p_old": 0.1449025701034753,
+      "p_arrival_only": 0.13408778818926603,
+      "p_new": 0.14407964955373176,
+      "quality_component": 0.011606208112531352,
+      "arrival_component": -0.012568115840959987,
+      "total_log_burden_change": -0.0009619077284286348
+    },
+    {
+      "T_old": 10,
+      "T_new": 9,
+      "R_old": 1.041,
+      "R_new": 1.0613394211622422,
+      "p_old": 0.1449025701034753,
+      "p_arrival_only": 0.13408778818926603,
+      "p_new": 0.1449025701034754,
+      "quality_component": 0.012568115840960126,
+      "arrival_component": -0.012568115840959987,
+      "total_log_burden_change": 1.3877787807814457e-16
+    },
+    {
+      "T_old": 10,
+      "T_new": 9,
+      "R_old": 1.041,
+      "R_new": 1.07,
+      "p_old": 0.1449025701034753,
+      "p_arrival_only": 0.13408778818926603,
+      "p_new": 0.15069772102048828,
+      "quality_component": 0.019368367236352158,
+      "arrival_component": -0.012568115840959987,
+      "total_log_burden_change": 0.006800251395392171
+    }
+  ],
+  "T4_wtp_supremum": 0.0761545739734858,
+  "T9_wtp_supremum": 0.16324473412734175,
+  "compensating_R_T10_to9": 1.0613394211622422,
+  "earlier_arrival_need_not_reduce_wtp": {
+    "gamma": 0.5,
+    "R": 1.06,
+    "T_old": 100,
+    "T_new": 99,
+    "p_old": 0.3192035232693733,
+    "p_new": 0.3193984395644355
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "inputs": {
+    "beta": 0.96,
+    "gamma": 0.5,
+    "r0": 1.02,
+    "rI": 1.0404,
+    "low_R": 1.041,
+    "high_R": 1.06,
+    "durations": [
+      5,
+      10,
+      20,
+      40
+    ]
+  },
+  "rows": [
+    {
+      "T": 5,
+      "payment_low": 0.0835036895051362,
+      "payment_high": 0.08760649047948943,
+      "change": 0.004102800974353227,
+      "resource_ceiling": 0.09426919017008419,
+      "remaining_room": 0.010765500664947983,
+      "relative_change": 0.04913317002718627
+    },
+    {
+      "T": 10,
+      "payment_low": 0.1449025701034753,
+      "payment_high": 0.1564869238109785,
+      "change": 0.011584353707503214,
+      "resource_ceiling": 0.17965170012484488,
+      "remaining_room": 0.03474913002136959,
+      "relative_change": 0.07994581254998305
+    },
+    {
+      "T": 20,
+      "payment_low": 0.223108043647991,
+      "payment_high": 0.24886077288270828,
+      "change": 0.025752729234717275,
+      "resource_ceiling": 0.32702866689194254,
+      "remaining_room": 0.10392062324395154,
+      "relative_change": 0.11542716620001688
+    },
+    {
+      "T": 40,
+      "payment_low": 0.28774674184623017,
+      "payment_high": 0.3201144463200498,
+      "change": 0.03236770447381965,
+      "resource_ceiling": 0.547109584814764,
+      "remaining_room": 0.25936284296853385,
+      "relative_change": 0.11248678009746751
+    }
+  ],
+  "finite_value_margin_1_minus_b": 0.023104000000000013,
+  "random_resource_comparisons": 400,
+  "min_PV_slack": 8.468543897732772e-05,
+  "min_payment_ceiling_gap": 8.459749590865318e-05,
+  "max_physical_error": 7.936330546975592e-16,
+  "boundary_approaches": [
+    {
+      "T": 5,
+      "epsilon": 0.001,
+      "R": 1.083984375,
+      "payment": 0.09394479666493516,
+      "gap_to_ceiling": 0.0003243935051490121
+    },
+    {
+      "T": 5,
+      "epsilon": 1e-05,
+      "R": 1.0850585937500001,
+      "payment": 0.09426592798803324,
+      "gap_to_ceiling": 3.2621820509337596e-06
+    },
+    {
+      "T": 5,
+      "epsilon": 1e-07,
+      "R": 1.0850693359375,
+      "payment": 0.09426915754642873,
+      "gap_to_ceiling": 3.262365544376422e-08
+    },
+    {
+      "T": 5,
+      "epsilon": 1e-09,
+      "R": 1.085069443359375,
+      "payment": 0.09426918984384747,
+      "gap_to_ceiling": 3.2623670431775054e-10
+    },
+    {
+      "T": 20,
+      "epsilon": 0.001,
+      "R": 1.083984375,
+      "payment": 0.32132508345654587,
+      "gap_to_ceiling": 0.005703583435396675
+    },
+    {
+      "T": 20,
+      "epsilon": 1e-05,
+      "R": 1.0850585937500001,
+      "payment": 0.32696982363472527,
+      "gap_to_ceiling": 5.884325721727812e-05
+    },
+    {
+      "T": 20,
+      "epsilon": 1e-07,
+      "R": 1.0850693359375,
+      "payment": 0.32702807827284175,
+      "gap_to_ceiling": 5.886191007942188e-07
+    },
+    {
+      "T": 20,
+      "epsilon": 1e-09,
+      "R": 1.085069443359375,
+      "payment": 0.32702866100573336,
+      "gap_to_ceiling": 5.886209186733993e-09
+    }
+  ],
+  "scope": "Linear accumulation resource ceiling; finite values only; no empirical claim."
+}
